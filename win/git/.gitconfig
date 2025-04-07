@@ -1,0 +1,28 @@
+[alias]
+	lg = !git log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' -n
+  lg-t = log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --since=yesterday
+	lg-ls = !git log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --name-only -n
+	unstage = restore --staged
+	s = status
+	ignore =  update-index --assume-unchanged
+	unignore =  update-index --no-assume-unchanged
+	skip =  update-index --skip-worktree
+	unskip =  update-index --no-skip-worktree
+	ignore-dir = !git ls-files $1 | xargs update-index --assume-unchanged
+	unignore-dir = !git ls-files $1 | xargs update-index --no-assume-unchanged
+	skip-dir = !git ls-files $1 | xargs git update-index --skip-worktree
+	unskip-dir = !git ls-files $1 | xargs update-index --no-skip-worktree
+	ignored = !git ls-files -v | grep "^[Sh]"
+	c = commit -m
+	ch = checkout
+	chb = checkout -b
+	append = commit --amend --no-edit
+	sm = stash -m
+	sl = stash list
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

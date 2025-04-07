@@ -1,0 +1,181 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "id": "User.newTab.5DEADB41"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": "closePane",
+            "id": "User.closePane"
+        }
+    ],
+    "alwaysShowNotificationIcon": true,
+    "confirmCloseAllTabs": false,
+    "copyFormatting": "all",
+    "copyOnSelect": false,
+    "defaultProfile": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+    "keybindings": 
+    [
+        {
+            "id": null,
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+d"
+        }
+    ],
+    "launchMode": "default",
+    "minimizeToNotificationArea": true,
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "newTabPosition": "afterLastTab",
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "adjustIndistinguishableColors": "always",
+            "backgroundImage": "D:\\Quick Access\\Pictures\\Wallpapers\\faded-memories.png",
+            "backgroundImageOpacity": 0.4,
+            "colorScheme": "One Half Dark",
+            "font": 
+            {
+                "face": "FiraCode Nerd Font"
+            },
+            "opacity": 20,
+            "useAcrylic": true
+        },
+        "list": 
+        [
+            {
+                "backgroundImage": "D:\\Quick Access\\Pictures\\dp\\luffy.jpg",
+                "backgroundImageOpacity": 0.6,
+                "bellStyle": "none",
+                "colorScheme": "CGA",
+                "font": 
+                {
+                    "builtinGlyphs": true
+                },
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "intenseTextStyle": "all",
+                "name": "GitBash",
+                "opacity": 0,
+                "padding": "0",
+                "scrollbarState": "hidden",
+                "source": "Git",
+                "startingDirectory": "D:\\Programming"
+            },
+            {
+                "backgroundImage": "D:\\Quick Access\\Pictures\\Wallpapers\\wp_walkIntoAbyss.png",
+                "backgroundImageOpacity": 0.7,
+                "backgroundImageStretchMode": "uniformToFill",
+                "bellStyle": "none",
+                "colorScheme": "CGA",
+                "commandline": "pwsh.exe -nologo",
+                "experimental.rightClickContextMenu": false,
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "icon": "D:\\Quick Access\\Pictures\\dp\\1zoro_logo.jpg",
+                "name": "PowerShell",
+                "opacity": 0,
+                "scrollbarState": "hidden",
+                "startingDirectory": "D:\\Programming",
+                "suppressApplicationTitle": true
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{f4858bce-38ae-54ed-9d43-180bdbb55daa}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{c4915730-80b5-5142-8506-d19328a40e53}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": true,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            }
+        ]
+    },
+    "schemes": [],
+    "showTabsInTitlebar": true,
+    "startOnUserLogin": false,
+    "tabSwitcherMode": "mru",
+    "tabWidthMode": "titleLength",
+    "themes": [],
+    "useAcrylicInTabRow": true,
+    "windowingBehavior": "useExisting"
+}
