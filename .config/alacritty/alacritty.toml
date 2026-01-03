@@ -1,0 +1,10 @@
+[general]
+import = ["~/.config/alacritty/themes/themes/catpuccin_latte.toml"]
+
+[window]
+opacity = 0.79
+dynamic_title = true
+padding = {  x= 10,   y= 10}
+
+[cursor]
+style = "Beam"
