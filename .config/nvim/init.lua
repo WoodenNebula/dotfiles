@@ -11,10 +11,10 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = vim.lsp.config["configs.lazy"]
+local lazy_config = require("configs.lazy")
 
 -- load plugins
-vim.lsp.config["lazy"].setup({
+require("lazy").setup({
     {
         "NvChad/NvChad",
         lazy = false,
@@ -29,11 +29,11 @@ vim.lsp.config["lazy"].setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
-local options = vim.lsp.config["options"]
-local autocmds = vim.lsp.config["nvchad.autocmds"]
-local custom_init = vim.lsp.config["custom.init"]
+require("options")
+require("nvchad.autocmds")
+require("custom.init")
 
 vim.schedule(function()
-    local mappings = vim.lsp.config["mappings"]
-    local custom_mappings = vim.lsp.config["custom.mappings"]
+    require("mappings")
+    require("custom.mappings")
 end)
