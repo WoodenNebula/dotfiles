@@ -16,9 +16,10 @@ local function custom_on_attach(client, bufnr)
 end
 
 for _, lsp in pairs(servers) do
-    require("lspconfig")[lsp].setup {
+    vim.lsp.config(lsp, {
         on_attach = custom_on_attach,
         on_init = nvlsp.on_init,
         capabilities = nvlsp.capabilities,
-    }
+    })
+    vim.lsp.enable(lsp)
 end
