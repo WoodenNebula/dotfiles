@@ -1,5 +1,6 @@
 [general]
-import = ["~/.config/alacritty/themes/themes/catpuccin_latte.toml"]
+import = ["~/.cache/wal/colors-alacritty.yml"]
+# import = ["~/.config/alacritty/themes/themes/catpuccin_latte.toml"]
 
 [window]
 opacity = 0.79

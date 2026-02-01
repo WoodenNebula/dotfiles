@@ -1,0 +1,28 @@
+#!/bin/bash
+
+WALL_ROOT="$HOME/Pictures/Desktop/Wallpapers/"
+CACHE="$HOME/.cache/wallpapers.list"
+
+mkdir -p "$(dirname "$CACHE")"
+
+# rebuild cache
+rebuild_cache() {
+  find "$WALL_ROOT" -type f \( \
+    -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \
+  \) | sort > "$CACHE"
+  echo "Rebuilt cache ($(wc -l < "$CACHE") wallpapers)"
+}
+
+# if cache doesn't exist, build it
+if [[ ! -f "$CACHE" ]]; then
+  rebuild_cache
+  exit 0
+fi
+
+# check if any wallpaper is newer than cache
+if find "$WALL_ROOT" -type f -newer "$CACHE" | read -r; then
+  rebuild_cache
+else
+  echo "Cache is up to date"
+fi
+

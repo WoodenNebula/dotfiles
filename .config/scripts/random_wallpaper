@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CACHE="$HOME/.cache/wallpapers.list"
+
+# builds cache list based on timestamp
+~/.config/scripts/cache_wallpaper_list
+
+# read cache into array
+mapfile -t WALLS < "$CACHE"
+
+[[ ${#WALLS[@]} -eq 0 ]] && exit 1
+
+WALL="${WALLS[RANDOM % ${#WALLS[@]}]}"
+
+swww img "$WALL" --transition-type fade --transition-duration 1.2
+wal -i "$WALL"
+
