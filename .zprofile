@@ -4,5 +4,5 @@ mkdir -p "$ssdir"
 export HYPRSHOT_DIR="$ssdir"
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec Hyprland > /dev/null 2>&1
+  exec start-hyprland > /dev/null 2>&1
 fi
