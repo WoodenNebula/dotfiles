@@ -1,2 +1,3 @@
 .config/tmux/plugins
 .config/alacritty/themes
+.tmux/resurrect/*txt
