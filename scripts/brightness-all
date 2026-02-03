@@ -1,0 +1,61 @@
+# #!/bin/bash
+#
+# STEP=5
+#
+# case "$1" in
+#   up)
+#     brightnessctl set +${STEP}%
+#     ddcutil setvcp 10 + ${STEP}
+#     ;;
+#   down)
+#     brightnessctl set ${STEP}%-
+#     ddcutil setvcp 10 - ${STEP}
+#     ;;
+# esac
+#
+
+STATE=/tmp/brightness_delta
+LOCK=/tmp/brightness_worker.lock
+STEP=5
+
+mkdir -p /tmp
+[[ -f $STATE ]] || echo 0 > $STATE
+
+
+# Update delta
+(
+flock 9
+echo "Changing delta ${delta}" | systemd-cat
+delta=$(<"$STATE")
+
+if [[ $1 == up ]]; then
+    delta=$((delta + STEP))
+else
+    delta=$((delta - STEP))
+fi
+
+echo "$delta" > "$STATE"
+) 9>"$LOCK"
+
+# Start worker only if not already running
+(
+    flock -n 8 || exit 0
+
+    # Apply only every x seconds
+    sleep .5
+    
+    delta=$(<"$STATE")
+    echo 0 > "$STATE"
+    echo "Adding delta ${delta}" | systemd-cat
+
+    [[ $delta -eq 0 ]] && exit 0
+
+    if (( delta > 0 )); then
+          brightnessctl set ${delta}%+
+          ddcutil setvcp 10 + $delta
+    elif (( delta < 0)); then
+          delta=$(echo $delta | tr -d '-')
+          brightnessctl set ${delta}%- -n 1%
+          ddcutil setvcp 10 - $delta
+    fi
+) 8>"$LOCK.worker" & disown
