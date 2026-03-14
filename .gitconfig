@@ -10,19 +10,6 @@
 [include]
   path = ~/.config/git/alias
 
-[alias]
-	lg = !git log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' -n
-    lg-t = log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --since=yesterday
-	lg-ls = !git log --pretty=format:'%Cred%h%Creset - %s %C(bold blue)<%an>%Creset %Cgreen(%cr) %C(yellow)%d%Creset' --name-only -n
-	unstage = restore --staged
-	s = status
-	c = commit -m
-	ch = checkout
-	chb = checkout -b
-	append = commit --amend --no-edit
-	sm = stash -m
-	sl = stash list
-
 [push]
 	autoSetupRemote = true
 
