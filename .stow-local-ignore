@@ -21,3 +21,9 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# template files tracked in version control but contains dummy data only
+\**\*-template
+
+# script init file
+scripts\init
