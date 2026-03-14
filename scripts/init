@@ -1,0 +1,18 @@
+# system update
+yes | sudo pacman -Syu
+
+# install required packages
+yes | sudo pacman -S git base-devel zsh bat git fzf
+
+# build yay
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+
+# change shell to zsh
+chsh -s $(where zsh)
+
+# install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+stow .
