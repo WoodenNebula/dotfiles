@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/.config/zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting sudo zsh-completions fzf zsh-vi-mode colored-man-pages)
+plugins=(git sudo fzf vi-mode colored-man-pages)
 
 
 # User configuration
