@@ -1,32 +1,30 @@
-[user]
-    name = noxtar
-    user = noxtar
-    email = 87257970+WoodenNebula@users.noreply.github.com
-    signingkey = ~/.ssh/github_ed25519.pub
 [core]
 	editor = nvim
 	pager = less -FX
 
-[include]
-  path = ~/.config/git/alias
-
 [push]
 	autoSetupRemote = true
+
+[advice]
+	forceDeleteBranch = false
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [init]
 	defaultBranch = main
 [fetch]
 	prune = true
-[gpg]
-	format = ssh
-[commit]
-	gpgSign = true
+
 [tag]
-    gpgSign = true
-[gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
+	sort = -version:refname
+
+[include]
+	path = ~/.config/git/alias
+
+# Local/private configs
+[include]
+	path = ~/.config/git/.gitconfig-local
