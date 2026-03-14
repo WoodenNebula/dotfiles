@@ -1,0 +1,8 @@
+##############
+## ALIASES  ##
+##############
+alias clip=clip.exe
+
+
+# connect to Windows ssh-agent instead of spawning one in arch
+eval $(wsl2-ssh-agent)

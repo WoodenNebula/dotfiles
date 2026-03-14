@@ -101,15 +101,6 @@ plugins=(git sudo fzf vi-mode colored-man-pages)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-ssh-run() {
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  eval "$(ssh-agent -s)"
-fi
-
-ssh-add -q ~/.ssh/github_ed25519
-}
-
 alias nano=nvim
 alias vim=nvim
 alias reload="source ~/.zshrc"
@@ -120,6 +111,9 @@ bindkey -r "^O"
 bindkey -s "^O" "^Utmux-sessionizer\n"
 
 source $ZSH/oh-my-zsh.sh
+
+# WSL specific configuration
+source $HOME/.zshrc-wsl
 
 source ~/.zshrc-local
 
