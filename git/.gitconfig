@@ -1,6 +1,7 @@
 [core]
 	editor = nvim
 	pager = less -FX
+    autocrlf = input
 
 [push]
 	autoSetupRemote = true
