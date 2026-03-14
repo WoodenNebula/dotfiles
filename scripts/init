@@ -2,7 +2,7 @@
 yes | sudo pacman -Syu
 
 # install required packages
-yes | sudo pacman -S git base-devel zsh bat git fzf
+yes | sudo pacman -S git base-devel zsh bat git fzf stow
 
 # build yay
 git clone https://aur.archlinux.org/yay-bin.git
@@ -15,4 +15,4 @@ chsh -s $(where zsh)
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-stow .
+stow zsh git alacritty nvim scripts tmux hypr waybar
