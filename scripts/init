@@ -18,8 +18,7 @@ chsh -s $(where zsh)
 cd ~
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-stow zsh git alacritty nvim scripts tmux hypr waybar
-
+stow zsh git alacritty nvim scripts tmux
 
 # install nvim dependencies
 yes | clang gdb lua51 python3 ruff shfmt stylua luarocks
