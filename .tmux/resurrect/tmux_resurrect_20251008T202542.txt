@@ -1,9 +1,0 @@
-pane	Downloads	1	0	:-	1	WoodenNebula	:/home/noxtar/Dev/TicTacToe	1	nvim	:nvim
-pane	Downloads	2	1	:*	1	WoodenNebula	:/home/noxtar/Downloads	1	zsh	:
-pane	TicTacToe	1	1	:*	1	WoodenNebula	:/home/noxtar/Dev/TicTacToe	1	nvim	:nvim
-pane	TicTacToe	2	0	:-	1	WoodenNebula	:/home/noxtar/Dev/TicTacToe	1	zsh	:
-window	Downloads	1	:nvim	0	:-	ca3d,136x28,0,0,0	:
-window	Downloads	2	:zsh	1	:*	ca3e,136x28,0,0,1	:
-window	TicTacToe	1	:nvim	1	:*	d5df,277x59,0,0,2	:
-window	TicTacToe	2	:zsh	0	:-	d440,136x59,0,0,3	:
-state	TicTacToe	
