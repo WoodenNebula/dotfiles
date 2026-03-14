@@ -1,3 +1,13 @@
-.config/tmux/plugins
-.config/alacritty/themes
-.tmux/resurrect/*txt
+alacritty/**/themes
+
+tmux/**/plugins
+tmux/**/resurrect/*txt
+
+# ignore private gitconfigs
+git/**/.gitconfig-*
+git/**/allowed_signers
+
+ssh/**/config
+
+# unignore template files
+!**/*-template
