@@ -1,0 +1,3 @@
+# rename the file to allowed_signers and add the signing keys for whose signatures can be verified as:
+username ssh-ed25519 public_key_here user_email
+username $(cat $(~/.ssh/id_ed25519))
