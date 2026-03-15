@@ -2,7 +2,7 @@
 yes | sudo pacman -Syu
 
 # install required packages
-yes | sudo pacman -S git base-devel zsh bat git fzf stow
+yes | sudo pacman -S git base-devel zsh bat fzf stow bear ripgrep python 
 
 # build yay
 git clone https://aur.archlinux.org/yay-bin.git
