@@ -5,25 +5,29 @@ return {
 
     formatters_by_ft = {
         lua = { "stylua" },
-        cpp = { "clang-format" },
-        c = { "clang-format" },
+        -- clang-format doesnt work since in formatters, it cannot use - for key
+        cpp = { "clang_format" },
+        c = { "clang_format" },
         py = { "ruff" },
+        sh = { "shfmt" },
     },
 
     formatters = {
         clang_format = {
-            prepend_args = { "--style=file", "--fallback-style=Google" },
+            -- actual bin to invoke for formatting
+            command = "clang-format",
+            prepend_args = { "--style={BasedOnStyle: Google, IndentWidth: 4}" },
         },
     },
 
     format_on_save = function(bufnr)
         local excluded = utils.is_excluded(bufnr, "format")
+
         if excluded then
             return
         else
-            print("Formating enabled for " .. vim.api.nvim_buf_get_name(bufnr))
             return {
-                lsp_fallback = true,
+                lsp_format = "fallback",
                 async = false,
                 timeout_ms = 500,
             }

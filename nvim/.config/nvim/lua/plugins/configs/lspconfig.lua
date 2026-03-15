@@ -51,6 +51,9 @@ vim.diagnostic.config {
 vim.o.updatetime = 250
 vim.api.nvim_create_autocmd("CursorHold", {
     callback = function()
-        vim.diagnostic.open_float(nil, { focus = false, scope = "line", close_events = { "InsertEnter" } })
+        vim.diagnostic.open_float(
+            nil,
+            { focus = false, scope = "line", close_events = { "InsertEnter", "CursorMoved", "BufLeave" } }
+        )
     end,
 })
