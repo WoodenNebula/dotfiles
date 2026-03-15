@@ -20,7 +20,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require "configs.lspconfig"
+            require "plugins.configs.lspconfig"
         end,
     },
     {
@@ -28,7 +28,7 @@ return {
         lazy = false,
         cmd = { "ConformInfo" },
         opts = function()
-            return require "custom.configs.conform"
+            return require "plugins.configs.conform"
         end,
     },
     {
@@ -57,14 +57,14 @@ return {
     {
         "mfussenegger/nvim-dap",
         config = function()
-            return require "custom.configs.dap"
+            return require "plugins.configs.dap"
         end,
     },
     {
         "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
         config = function()
-            return require "custom.configs.dapui"
+            return require "plugins.configs.dapui"
         end,
     },
 }

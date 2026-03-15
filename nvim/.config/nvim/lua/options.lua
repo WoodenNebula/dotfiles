@@ -9,3 +9,4 @@ opt.cursorline = true
 opt.cursorlineopt = "both"
 opt.shiftwidth = 4
 opt.tabstop = 4
+opt.foldlevelstart = 99
