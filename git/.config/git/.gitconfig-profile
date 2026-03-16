@@ -1,0 +1,17 @@
+# Default config
+[user]
+    name = "WoodenNebula"
+
+# Github config
+[include]
+    path = ~/.config/git/.gitconfig-github
+
+# Gitlab config
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:**/**"]
+    path = ~/.config/git/.gitconfig-gitlab
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/**/**"]
+    path = ~/.config/git/.gitconfig-gitlab
+
+# Work config; HostName resolved by ssh-config
+[includeIf "hasconfig:remote.*.url:git@gitlab.com-Work:**/**"]
+    path =~/.config/git/.gitconfig-work

@@ -20,12 +20,19 @@
 [fetch]
 	prune = true
 
+[commit]
+    gpgSign = true
 [tag]
-	sort = -version:refname
+    gpgSign = true
+    sort = -version:refname
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
 
 [include]
 	path = ~/.config/git/alias
 
-# Local/private configs
+# profile wise configs
 [include]
-	path = ~/.config/git/.gitconfig-local
+	path = ~/.config/git/.gitconfig-profile
