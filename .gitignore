@@ -10,8 +10,7 @@ git/**/allowed_signers
 
 nvim/**/lazy-lock.json
 
-ssh/**/config
-ssh/**/id*
+ssh/**/*
 
 # unignore template files
 !**/*-template
