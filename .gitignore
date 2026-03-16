@@ -12,5 +12,7 @@ nvim/**/lazy-lock.json
 
 ssh/**/*
 
+zsh/**/*-local
+
 # unignore template files
 !**/*-template
