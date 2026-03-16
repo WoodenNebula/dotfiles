@@ -5,9 +5,13 @@ tmux/**/resurrect/*txt
 
 # ignore private gitconfigs
 git/**/.gitconfig-*
+!git/**/.gitconfig-profile
 git/**/allowed_signers
 
+nvim/**/lazy-lock.json
+
 ssh/**/config
+ssh/**/id*
 
 # unignore template files
 !**/*-template
