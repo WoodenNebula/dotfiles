@@ -120,3 +120,5 @@ bindkey -r "^O"
 bindkey -s "^O" "^Utmux-sessionizer\n"
 
 source $ZSH/oh-my-zsh.sh
+
+source ~/.zshrc-local
