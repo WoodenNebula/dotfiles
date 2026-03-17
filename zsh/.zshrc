@@ -122,3 +122,31 @@ bindkey -s "^O" "^Utmux-sessionizer\n"
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zshrc-local
+
+
+# vim mode config
+# ---------------
+# Remove mode switching delay.
+KEYTIMEOUT=5
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]] ||
+        [[ $1 = 'block' ]]; then
+        printf '\e[1 q'
+
+    elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = '' ]] ||
+        [[ $1 = 'beam' ]]; then
+        printf '\e[5 q'
+    fi
+}
+zle -N zle-keymap-select
+
+_fix_cursor() {
+    printf '\e[5 q'
+}
+
+# Use beam shape cursor for each new prompt.
+precmd_functions+=(_fix_cursor)
